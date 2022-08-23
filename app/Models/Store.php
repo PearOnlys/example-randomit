@@ -15,6 +15,12 @@ class Store extends Model
         'category_id',
         'delivery_id'
     ];
+
+    static $rules = [
+        'name' => 'required|max:255|unique:stores,name',
+        'category_id' => 'required',
+        'delivery_id' => 'required'
+    ];
     
     public function setNameAttribute($name)
     {

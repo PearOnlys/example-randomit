@@ -13,6 +13,10 @@ class Delivery extends Model
     protected $fillable = [
         'name',
     ];
+
+    static $rules = [
+        'name' => 'required|max:255|unique:deliveries,name'
+    ];
     
     public function setNameAttribute($name)
     {

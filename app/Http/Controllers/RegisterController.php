@@ -7,11 +7,13 @@ use App\Models\User;
 
 class RegisterController extends Controller
 {
-    public function create(){
+    public function create()
+    {
         return view('register');
     }
-    
-    public function store(){
+
+    public function store()
+    {
         $attributes = request()->validate([
             'name' => 'required|max:255|unique:users,name',
             'email' => 'required|email|max:255|unique:users,email',
